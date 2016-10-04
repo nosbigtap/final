@@ -13,13 +13,12 @@ body {
 }
 
 .draggable {
-  width: 140px;
-  height: 140px;
-  background: whitesmoke;
+
   border-radius: 10px;
   margin: 0 10px 10px 0;
   float: left;
 }
+
 .draggable.is-pointer-down {
   background: lightgray;
   z-index: 2; /* above other draggies */
@@ -29,4 +28,18 @@ body {
 
 label {
     font-weight: bold
+}
+
+.handle {
+  background: darkgray;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+textarea {
+  width: 140px;
+  height: 140px;
+  background: whitesmoke;
 }
