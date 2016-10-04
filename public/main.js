@@ -13,7 +13,16 @@ for ( var i=0, len = draggableElems.length; i < len; i++ ) {
   var draggie = new Draggabilly( draggableElem, {
     handle: '.handle',
     containment: true,
-    grid: [ 10, 10 ]
+    grid: [ 20, 20 ]
   });
   draggies.push( draggie );
 }
+
+tinymce.init({
+        selector: "textarea",
+        width: 350,
+        height: 200,
+        statusbar: false,
+        menubar:false,
+        toolbar: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table | fontsizeselect"
+     })
