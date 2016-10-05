@@ -42,7 +42,8 @@ textarea {
   background: whitesmoke;
 }
 
-.editable {
-
-
+div.editor {
+  height: 100px;
+  width: 100px;
+  background-color: white;
 }

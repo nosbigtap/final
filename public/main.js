@@ -1,6 +1,4 @@
 
-
-
 // multiple .draggable elements
 
 // get all draggie elements
@@ -18,4 +16,5 @@ for ( var i=0, len = draggableElems.length; i < len; i++ ) {
   draggies.push( draggie );
 }
 
-var editor = new MediumEditor('.editable');
+//Pen
+var editor = new Pen(document.getElementById('editor'));
