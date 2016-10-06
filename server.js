@@ -23,10 +23,11 @@ var config = require('./package'),
             ephemeral: false,   // when true, cookie expires when the browser closes
             httpOnly: true,     // when true, cookie is not accessible from javascript
             secure: false       // when true, cookie will only be sent over SSL;
+
         }
     }),
     app = express(), // initialize express
-    port = process.env.PORT||80; // server port
+    port = process.env.PORT||3000; // server port
 
 // server setup
 app.use(logger);    // mounting dev logging
