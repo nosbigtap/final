@@ -18,4 +18,9 @@ module.exports = function(app) {
     app.get('/dashboard', (req, res) => { // renders the dashboard, break this out into another controller if needed!
         res.render('dashboard', req.session)
     });
+
+    //STACKSHEET
+    app.get('/stacksheet', (req, res) => {
+      res.render('stacksheet', req.session)
+    });
 }

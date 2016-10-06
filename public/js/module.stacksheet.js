@@ -1,4 +1,6 @@
-
+angular.module('module.stacksheet', [])
+  .controller('stackController', stacksheet);
+  textAreas ={}
 // multiple .draggable elements
 
 // get all draggie elements
@@ -15,6 +17,11 @@ for ( var i=0, len = draggableElems.length; i < len; i++ ) {
   });
   draggies.push( draggie );
 }
+
+//New textarea function
+funtion addText(){
+  var textBlock = document.createElement('textarea');
+};
 
 //Pen
 var editor = new Pen(document.getElementById('editor'));
