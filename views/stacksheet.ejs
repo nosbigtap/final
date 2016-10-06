@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+      <link rel="stylesheet" href="src/pen.css" />
+      <link rel="stylesheet" type="text/css" href="/css/stacksheet.css"/>
+
+      <script src="https://npmcdn.com/draggabilly@2.1/dist/draggabilly.pkgd.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="draggable">
+        <div class="handle"></div>
+        <div data-toggle="pen" data-placeholder="im a placeholder">
+        <p>words and shit</p>
+      </div>
+    </div>
+      <div class="draggable">
+        <div class="handle"></div>
+        <textarea class='editor'></textarea>
+      </div>
+
+      <div class="draggable">
+        <div class="handle"></div>
+        <textarea></textarea>
+      </div>
+
+    </div>
+    </div>
+    <script src="/js/module.stacksheet.js"></script>
+  </body>
+</html>

@@ -11,11 +11,13 @@
         <script src="/js/module.dashboard.js"></script>
     </head>
     <body ng-controller="DashboardController as dashboard" class="container">
-        <div class="jumbotron">
+        <div class="jumbotron text-center">
             <h1>Welcome to your dashboard!</h1>
-            <p>One day this page will be filled with imagination...</p>
+            <p>Control your documents</p>
             <p>Mongo UserID: <%= uid %></p>
-            <a href="/" class="btn btn-lg btn-default">Homepage</a>
+            <a href="/" class="btn btn-lg btn-default styleButton">Homepage</a>
+            <a href="/" class="btn btn-lg btn-default styleButton">New Sheet</a>
+            <a href="/" class="btn btn-lg btn-default styleButton">Load Sheet</a>
             <a href="/logout" class="btn btn-lg btn-danger">Logout</a>
         </div>
     </body>

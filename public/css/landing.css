@@ -1,4 +1,11 @@
 body {
     margin-top: 40px;
-    background-color: powderblue;
+    background-color: azure;
+}
+.jumbotron {
+  background-color: powderblue;
+}
+
+.btn-lg {
+  color: azure;
 }
