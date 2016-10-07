@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head ng-app="module.stacksheet">
+  <head>
     <title></title>
       <link rel="stylesheet" href="src/pen.css" />
       <link rel="stylesheet" type="text/css" href="/css/stacksheet.css"/>
@@ -10,9 +10,10 @@
 
   </head>
 
-  <body>
-    <div  ng-controller="stackController as stacksheet" class="container">
-
+  <body ng-app="stacksheet">
+    <button ng-click="txtCtrl()">Add stuff</button>
+    <button ng-click="removeTxtElem">Remove Stuff</button>
+    <div  ng-controller="textController as txtCtrl" class="container">
       <div class="draggable">
         <div class="handle"></div>
         <textarea class='editor'></textarea>

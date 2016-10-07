@@ -1,8 +1,28 @@
-angular.module('module.stacksheet', [])
-  .controller('stackController', stacksheet);
-  textAreas ={}
-// multiple .draggable elements
+angular.module('stacksheet', []);
+  .controller('textController', txtCtrl);
 
+//add element (Draggable Textarea)
+function txtCtrl(body) {
+    // Adds an element to the document
+    var p = document.getElementById('textarea');
+    var newElement = document.createElement('textarea');
+    newElement.setAttribute('draggable');
+    newElement.innerHTML = html;
+    p.appendChild('body');
+}
+// function txtCtrl(){
+//   newTextElem = document.createElement('textArea');
+//   newTextElem.className="draggable";
+// }
+
+//remove element (Dragabble textarea)
+function removeTxtElem(body) {
+    // Removes an element from the document
+    var element = document.getElementById('textarea');
+    element.parentNode.removeChild(element);
+}
+
+// multiple .draggable elements
 // get all draggie elements
 var draggableElems = document.querySelectorAll('.draggable');
 // array of Draggabillies
@@ -17,11 +37,6 @@ for ( var i=0, len = draggableElems.length; i < len; i++ ) {
   });
   draggies.push( draggie );
 }
-
-//New textarea function
-funtion addText(){
-  var textBlock = document.createElement('textarea');
-};
 
 //Pen
 var editor = new Pen(document.getElementById('editor'));
