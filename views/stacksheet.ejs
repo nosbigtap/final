@@ -2,7 +2,7 @@
 <html>
   <head>
     <title></title>
-      <link rel="stylesheet" href="src/pen.css" />
+      <!-- <link rel="stylesheet" href="src/pen.css" /> -->
       <link rel="stylesheet" type="text/css" href="/css/stacksheet.css"/>
 
       <script src="https://npmcdn.com/draggabilly@2.1/dist/draggabilly.pkgd.min.js"></script>
@@ -11,9 +11,12 @@
   </head>
 
   <body ng-app="stacksheet">
-    <button ng-click="txtCtrl()">Add stuff</button>
-    <button ng-click="removeTxtElem">Remove Stuff</button>
-    <div  ng-controller="textController as txtCtrl" class="container">
+
+    <button ng-click="txtCtrl()">Add Stuff</button>
+    <button ng-click="removeTxtElem()">Remove Stuff</button>
+
+    <div  ng-controller="textController as textAreas" class="container">
+
       <div class="draggable">
         <div class="handle"></div>
         <textarea class='editor'></textarea>

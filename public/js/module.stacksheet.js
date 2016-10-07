@@ -1,26 +1,34 @@
-angular.module('stacksheet', []);
+angular.module('stacksheet', [])
   .controller('textController', txtCtrl);
 
 //add element (Draggable Textarea)
-function txtCtrl(body) {
-    // Adds an element to the document
-    var p = document.getElementById('textarea');
-    var newElement = document.createElement('textarea');
-    newElement.setAttribute('draggable');
-    newElement.innerHTML = html;
-    p.appendChild('body');
+function txtCtrl(){
+  var textAreas = this;
+  this.angular.element(
+    '<div class="draggable">
+      <div class="handle">
+      <textarea></textarea>
+      </div>
+    </div>'
+  )
+  });
+  var body = angular.element($document).find('body').eq(0);
+  body.append(this)
 }
-// function txtCtrl(){
-//   newTextElem = document.createElement('textArea');
-//   newTextElem.className="draggable";
-// }
 
-//remove element (Dragabble textarea)
-function removeTxtElem(body) {
-    // Removes an element from the document
-    var element = document.getElementById('textarea');
-    element.parentNode.removeChild(element);
-}
+//
+// function txtCtrl(){
+//   newTextElem = document.createElement('textarea');
+//   newTextElem.className="draggable";
+//   newTextElem.className="handle";
+// };
+//
+// //remove element (Dragabble textarea)
+// function removeTxtElem(body) {
+//     // Removes an element from the document
+//     var element = document.getElementById('textarea');
+//     element.parentNode.removeChild(element);
+// };
 
 // multiple .draggable elements
 // get all draggie elements
@@ -38,16 +46,16 @@ for ( var i=0, len = draggableElems.length; i < len; i++ ) {
   draggies.push( draggie );
 }
 
-//Pen
-var editor = new Pen(document.getElementById('editor'));
-
-// config
- var options = {
-   // toolbar: document.getElementById('custom-toolbar'),
-   editor: document.querySelector('[data-toggle="pen"]'),
-   debug: true,
-   list: [
-     'insertimage', 'blockquote', 'h2', 'h3', 'p', 'code', 'insertorderedlist', 'insertunorderedlist', 'inserthorizontalrule',
-     'indent', 'outdent', 'bold', 'italic', 'underline', 'createlink'
-   ]
- };
+// //Pen
+// var editor = new Pen(document.getElementById('editor'));
+//
+// // config
+//  var options = {
+//    // toolbar: document.getElementById('custom-toolbar'),
+//    editor: document.querySelector('[data-toggle="pen"]'),
+//    debug: true,
+//    list: [
+//      'insertimage', 'blockquote', 'h2', 'h3', 'p', 'code', 'insertorderedlist', 'insertunorderedlist', 'inserthorizontalrule',
+//      'indent', 'outdent', 'bold', 'italic', 'underline', 'createlink'
+//    ]
+//  };
