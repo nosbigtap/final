@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="stacksheet">
   <head>
     <title></title>
       <!-- <link rel="stylesheet" href="src/pen.css" /> -->
@@ -10,25 +10,21 @@
 
   </head>
 
-  <body ng-app="stacksheet">
+  <body ng-controller="textController as txtCtrl" >
 
-    <button ng-click="txtCtrl()">Add Stuff</button>
-    <button ng-click="removeTxtElem()">Remove Stuff</button>
+    <nav>
+      <button ng-click="txtCtrl.addTextArea()">Add Stuff</button>
+      <button ng-click="txtCtrl.removeTextArea()">Remove Stuff</button>
+    </nav>
 
-    <div  ng-controller="textController as textAreas" class="container">
+    <div class="container">
 
-      <div class="draggable">
+      <div ng-repeat="text in txtCtrl.textAreas track by $index" class="draggable">
         <div class="handle"></div>
-        <textarea class='editor'></textarea>
+        <textarea ng-blur="txtCtrl.saveInfo()"> {{ text }} </textarea>
       </div>
-
-      <div class="draggable">
-        <div class="handle"></div>
-        <textarea></textarea>
-      </div>
-
     </div>
-    </div>
+
     <script src="/js/module.stacksheet.js"></script>
   </body>
 </html>
