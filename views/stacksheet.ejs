@@ -21,7 +21,7 @@
 
       <div ng-repeat="text in txtCtrl.textAreas track by $index" class="draggable">
         <div class="handle"></div>
-        <textarea ng-blur="txtCtrl.saveInfo()"> {{ text }} </textarea>
+        <textarea ng-blur="txtCtrl.saveInfo($index)" ng-model="txtCtrl.textAreas[$index]"> {{ text }} </textarea>
       </div>
     </div>
 
