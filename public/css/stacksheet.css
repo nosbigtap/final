@@ -7,11 +7,14 @@ body {
 .container {
   height: 10in;
   width: 7.5in;
-  background-color: ivory;
+  background-color: white;
   padding: .5in;
-
+  margin: auto;
 }
 
+
+
+/*
 .draggable {
   float: left;
 }
@@ -19,31 +22,28 @@ body {
 .draggable.is-pointer-down {
   background: lightgray;
   z-index: 2; /* above other draggies */
-}
-.draggable.is-dragging { opacity: 0.7; }
+/*}
+.draggable.is-dragging { opacity: 0.7; }*/
 
-
+/*
 label {
     font-weight: bold
+}*/
+
+
+
+.textArea {
+  width: 30px;
+  height: 30px;
+  background: white;
+  float:left;
+  resize: both;
+  border: lightgray dashed 1px;
+  margin: 5px;
 }
 
-.handle {
-  background: powderblue;
-  height: 10px;
-  width: 20px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-
-}
-
-textarea {
-  width: 100px;
-  height: 50px;
-  background: whitesmoke;
-}
-
-div.editor {
+/*div.editor {
   height: 100px;
   width: 100px;
   background-color: white;
-}
+}*/

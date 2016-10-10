@@ -1,6 +1,7 @@
 'use strict'
 
 var Auth = require('./auth');
+var Info = require('./info');
 
 module.exports = function(app) {
     // SITE ROOT
@@ -15,7 +16,7 @@ module.exports = function(app) {
 
     // DAHSBOARD
     app.all('/dashboard*', Auth.session); // protect all dashboard routes from unauthorized users
-    app.get('/dashboard', (req, res) => { // renders the dashboard, break this out into another controller if needed!
+    app.get('/dashboard', (req, res) => { // renders the dashboard
         res.render('dashboard', req.session)
     });
 
@@ -23,4 +24,5 @@ module.exports = function(app) {
     app.get('/stacksheet', (req, res) => {
       res.render('stacksheet', req.session)
     });
+    app.post('/projects/routes/info', Info.save);
 }

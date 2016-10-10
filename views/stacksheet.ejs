@@ -2,28 +2,45 @@
 <html ng-app="stacksheet">
   <head>
     <title>StackSheet</title>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="/css/stacksheet.css"/>
 
-      <script src="https://npmcdn.com/draggabilly@2.1/dist/draggabilly.pkgd.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+      <script src="https://rawgit.com/Jimdo/angular-draggabilly/master/dist/angular-draggabilly.min.js"></script>
+      <script src="/js/module.stacksheet.js"></script>
 
   </head>
 
   <body ng-controller="textController as txtCtrl" >
-
-    <nav>
-      <button ng-click="txtCtrl.addTextArea()">Add Stuff</button>
-      <button ng-click="txtCtrl.removeTextArea()">Remove Stuff</button>
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
+            <li role="presentation"><a href="/">Home</a></li>
+            <li role="presentation"><a href="/login">Login</a></li>
+        </ul>
     </nav>
+    <nav class="navbar navbar-default addRemove">
+      <ul class="nav navbar-nav">
+        <button ng-click="txtCtrl.addTextArea()">Add Stuff</button>
+        <button ng-click="txtCtrl.removeTextArea()">Remove Stuff</button>
+      </ul>
+    </nav>
+
 
     <div class="container">
 
-      <div ng-repeat="text in txtCtrl.textAreas track by $index" class="draggable">
-        <div class="handle"></div>
-        <textarea ng-blur="txtCtrl.saveInfo($index)" ng-model="txtCtrl.textAreas[$index]"> {{ text }} </textarea>
+      <div ng-repeat="text in txtCtrl.textAreas track by $index">
+            <!-- <div class="textArea" contenteditable="true" ng-blur="txtCtrl.saveInfo($index)" ng-model="txtCtrl.textAreas[$index]">
+              {{ text }}
+           </div> -->
+
+           <textarea class="textArea" ng-blur="txtCtrl.saveInfo($index)" ng-model="txtCtrl.textAreas[$index]">
+             {{ text }}
+          </textarea>
       </div>
+
     </div>
 
-    <script src="/js/module.stacksheet.js"></script>
   </body>
 </html>

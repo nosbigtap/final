@@ -1,0 +1,19 @@
+{
+  "name": "final",
+  "description": "My Final Project for Refactor U",
+  "main": "server.js",
+  "authors": [
+    "PSG"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/nosbigtap/final",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}
