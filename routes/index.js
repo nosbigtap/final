@@ -24,5 +24,6 @@ module.exports = function(app) {
     app.get('/stacksheet', (req, res) => {
       res.render('stacksheet', req.session)
     });
+    // INFO
     app.post('/projects/routes/info', Info.save);
 }
