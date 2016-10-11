@@ -26,4 +26,6 @@ module.exports = function(app) {
     });
     // INFO
     app.post('/projects/routes/info', Info.save);
+    // GET
+    app.get('/projects/elements', Info.get);
 }

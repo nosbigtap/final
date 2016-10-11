@@ -42,8 +42,6 @@ body { font-family: sans-serif; }
   width: 15px;
   height: 15px;
   background: lightblue;
-  padding: 5px;
-  margin-bottom: 10px;
 }
 
 /* other items appear above handle */

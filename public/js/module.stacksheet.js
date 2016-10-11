@@ -10,19 +10,24 @@ function textController($http, $document, $timeout){
     txtCtrl.$dragify = function () {
       $('.item').draggabilly({
         handle: '.handle',
-        grid: [ 20, 20 ],
+        grid: [ 10, 10 ],
         containment: true,
       });
     }
 
-
     //add element
     txtCtrl.addTextArea = function() {
         console.info("Clicked addTextControl", txtCtrl);
-        txtCtrl.textAreas.push(' ');
+        txtCtrl.textAreas.push({
+          style: {},
+          text: '',
+          left: Number,
+          top: Number,
+        });
 
         $timeout(txtCtrl.$dragify, 500);
     };
+
     // remove element
     txtCtrl.removeTextArea = function() {
         console.info("Clicked removeTextArea");
@@ -31,10 +36,40 @@ function textController($http, $document, $timeout){
     // save text info
     txtCtrl.saveInfo = function($index){
        console.log('saved stuff', $index, txtCtrl.textAreas, txtCtrl.textAreas[$index]);
-       $http.post('/projects/routes/info', txtCtrl.textAreas);
+
+       var textarea = $($('.item textarea')[$index]);
+
+      //  console.log(
+      //    textarea,
+      //    textarea.width(),
+      //    textarea.height(),
+      //    textarea.text()
+      //  );
+
+       $http.post('/projects/routes/info', {
+         style: {
+           width: textarea.width()+'px',
+           height: textarea.height()+'px',
+         },
+         text: textarea.text()
+       }).then(function(res){
+         console.log(res.data);
+       }, function(err) {
+          console.error(err);
+       });
     };
-    txtCtrl.getInfo = function($index){
-      $http.get('/projects/models/element', Element);
+
+    //load info
+    txtCtrl.getInfo = function(){
+      $http.get('/projects/elements')
+        .then(function success(res){
+          console.log(res.data);
+          txtCtrl.textAreas = res.data;
+          $timeout(txtCtrl.$dragify, 500);
+        },
+        function (err){
+          console.log("get info error", err)
+        });
     };
 };
 
