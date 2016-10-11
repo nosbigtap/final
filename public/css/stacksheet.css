@@ -39,15 +39,16 @@ body { font-family: sans-serif; }
 
 .item {
   position: relative;
-  width: 200px;
-  height: 200px;
-  background: #CCC;
-  padding: 10px;
+  width: 15px;
+  height: 15px;
+  background: lightblue;
+  padding: 5px;
   margin-bottom: 10px;
 }
 
 /* other items appear above handle */
-.item > * {
+.item {
+  float: left;
   position: relative;
 }
 
@@ -66,11 +67,13 @@ body { font-family: sans-serif; }
 }
 
 textarea {
+  height: 25px;
+  width: 25px;
   resize: both;
 }
 
 
-.textArea {
+/*.textArea {
   width: 50px;
   height: 25px;
   background: white;
@@ -78,7 +81,7 @@ textarea {
   resize: both;
   border: lightgray dashed 1px;
   margin: 5px;
-}
+}*/
 
 /*div.editor {
   height: 100px;
