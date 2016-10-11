@@ -1,18 +1,22 @@
-"name": "dragon-sheets",
-  "version": "1.0.0",
-  "description": "",
+{
+  "name": "dragon-sheets",
+  "version": "2.5.1",
+  "description": "Authenticate like a boss!",
   "main": "server.js",
-
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
   },
-  "homepage": "https://github.com/nosbigtap/final#readme",
+  "author": "PSC",
+  "license": "ISC",
   "dependencies": {
-   "bcryptjs": "^2.3.0",
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "client-sessions": "^0.7.0",
     "colors": "^1.1.2",
-    "ejs": "^2.5.2",
+    "ejs": "^2.4.2",
     "express": "^4.14.0",
-   "mongoose": "^4.6.3",
+    "mongoose": "^4.5.6",
     "morgan": "^1.7.0"
   }
 }
