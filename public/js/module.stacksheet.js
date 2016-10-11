@@ -6,29 +6,30 @@ function textController($http){
     var txtCtrl = this;
     txtCtrl.textAreas = [];
 
-//     txtCtrl.dragify = function() {
-//       // multiple .draggable elements
-//       // get all draggie elements
-//       var draggableElems = document.querySelectorAll('.draggable');
-//       // array of Draggabillies
-//       var draggies = []
-//       // init Draggabillies
-//       for ( var i=0, len = draggableElems.length; i < len; i++ ) {
-//         var draggableElem = draggableElems[i];
-//         var draggie = new Draggabilly( draggableElem, {
-//           handle: '.handle',
-//           containment: true,
-//           grid: [ 20, 20 ]
-//         });
-//         draggies.push( draggie );
-//       }
-//     };
+
+    // txtCtrl.dragify = function() {
+    //   // multiple .draggable elements
+    //   // get all draggie elements
+    //   var draggableElems = document.querySelectorAll('.draggable');
+    //   // array of Draggabillies
+    //   var draggies = []
+    //   // init Draggabillies
+    //   for ( var i=0, len = draggableElems.length; i < len; i++ ) {
+    //     var draggableElem = draggableElems[i];
+    //     var draggie = new Draggabilly( draggableElem, {
+    //       handle: '.handle',
+    //       containment: true,
+    //       grid: [ 20, 20 ],
+    //     });
+    //     draggies.push( draggie );
+    //   }
+    // };
 
     //add element
     txtCtrl.addTextArea = function() {
         console.info("Clicked addTextControl", txtCtrl);
         txtCtrl.textAreas.push(' ');
-
+        
     };
     // remove element
     txtCtrl.removeTextArea = function() {
@@ -39,6 +40,9 @@ function textController($http){
     txtCtrl.saveInfo = function($index){
        console.log('saved stuff', $index, txtCtrl.textAreas, txtCtrl.textAreas[$index]);
        $http.post('/projects/routes/info', txtCtrl.textAreas);
+    };
+    txtCtrl.getInfo = function($index){
+      $http.get('/projects/models/element', Element);
     };
 };
 
