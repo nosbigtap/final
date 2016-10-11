@@ -1,6 +1,6 @@
 module.exports = require('mongoose').model('Element', {
     userId : String,
-    style  : Array,
+    style  : Object,
     parent : Object,
     text   : String
 });

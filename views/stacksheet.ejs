@@ -28,13 +28,13 @@
       </ul>
     </nav>
 
-    <div class="container">
-
-      <div class="item" ng-repeat="textArea in txtCtrl.textAreas track by $index" ng-style="txtCtrl.textAreas[$index].parent.style">
+    <div id="documents" class="container">
+      <div class="item" ng-repeat="textArea in txtCtrl.textAreas track by $index" ng-style="textArea.parent">
         <div class="handle"></div>
-           <textarea ng-blur="txtCtrl.saveInfo($index)" ng-model="txtCtrl.textAreas[$index].text">
+           <textarea ng-blur="txtCtrl.saveInfo($index)" ng-model="txtCtrl.textAreas[$index].text" ng-style="textArea.style">
              {{ textArea.text }}
           </textarea>
+          <input type="hidden" ng-model="txtCtrl.textAreas[$index]._id" value="{{textArea._id}}"/>
       </div>
 
       <!-- <div class="item">
