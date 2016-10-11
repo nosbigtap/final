@@ -1,35 +1,26 @@
 angular.module('stacksheet', [])
-  .controller('textController', ['$http', textController]);
+  .controller('textController', ['$http', '$document','$timeout', textController]);
 
 
-function textController($http){
+function textController($http, $document, $timeout){
     var txtCtrl = this;
+
     txtCtrl.textAreas = [];
 
-
-    // txtCtrl.dragify = function() {
-    //   // multiple .draggable elements
-    //   // get all draggie elements
-    //   var draggableElems = document.querySelectorAll('.draggable');
-    //   // array of Draggabillies
-    //   var draggies = []
-    //   // init Draggabillies
-    //   for ( var i=0, len = draggableElems.length; i < len; i++ ) {
-    //     var draggableElem = draggableElems[i];
-    //     var draggie = new Draggabilly( draggableElem, {
-    //       handle: '.handle',
-    //       containment: true,
-    //       grid: [ 20, 20 ],
-    //     });
-    //     draggies.push( draggie );
-    //   }
-    // };
+    txtCtrl.$dragify = function () {
+        $('.item').draggabilly({
+            handle: '.handle',
+            grid: [ 20, 20 ],
+            containment: true,
+        });
+    }
 
     //add element
     txtCtrl.addTextArea = function() {
         console.info("Clicked addTextControl", txtCtrl);
         txtCtrl.textAreas.push(' ');
-        
+
+        $timeout(txtCtrl.$dragify, 500);
     };
     // remove element
     txtCtrl.removeTextArea = function() {
