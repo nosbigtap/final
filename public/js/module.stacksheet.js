@@ -20,9 +20,10 @@ function textController($http, $document, $timeout){
         console.info("Clicked addTextControl", txtCtrl);
         txtCtrl.textAreas.push({
           style: {},
-          text: '',
-          left: Number,
-          top: Number,
+          parent: {
+            style: {}
+          },
+          text: ''
         });
 
         $timeout(txtCtrl.$dragify, 500);
@@ -37,22 +38,23 @@ function textController($http, $document, $timeout){
     txtCtrl.saveInfo = function($index){
        console.log('saved stuff', $index, txtCtrl.textAreas, txtCtrl.textAreas[$index]);
 
-       var textarea = $($('.item textarea')[$index]);
+       var textarea = $($('.item textarea')[$index]),
+           parent = $($('.item')[$index]),
+           payload = {
+             parent: {
+               left: parent.position().left+'px',
+               top: parent.position().top+'px'
+            },
+             style: {
+               width: textarea.width()+'px',
+               height: textarea.height()+'px',
+             },
+             text: textarea.text()
+           };
 
-      //  console.log(
-      //    textarea,
-      //    textarea.width(),
-      //    textarea.height(),
-      //    textarea.text()
-      //  );
+           console.log('PAYLOAD:::', payload);
 
-       $http.post('/projects/routes/info', {
-         style: {
-           width: textarea.width()+'px',
-           height: textarea.height()+'px',
-         },
-         text: textarea.text()
-       }).then(function(res){
+       $http.post('/projects/routes/info', payload).then(function(res){
          console.log(res.data);
        }, function(err) {
           console.error(err);

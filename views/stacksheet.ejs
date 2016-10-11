@@ -30,7 +30,7 @@
 
     <div class="container">
 
-      <div class="item" ng-repeat="textArea in txtCtrl.textAreas track by $index">
+      <div class="item" ng-repeat="textArea in txtCtrl.textAreas track by $index" ng-style="txtCtrl.textAreas[$index].parent.style">
         <div class="handle"></div>
            <textarea ng-blur="txtCtrl.saveInfo($index)" ng-model="txtCtrl.textAreas[$index].text">
              {{ textArea.text }}
