@@ -9,33 +9,13 @@ body {
   width: 7.5in;
   background-color: white;
   padding: .5in;
-  margin: auto;
+  margin-bottom: 20px;
+  box-shadow: 10px 10px 5px #888888;
 }
 
-
-
-
-.draggable {
-  float: left;
+.buttonMenu {
+  text-align: center;
 }
-
-.draggable.is-pointer-down {
-  background: lightgray;
-  z-index: 2;  /*above other draggies */
-}
-.draggable.is-dragging {
-  opacity: 0.7;
-}
-
-
-label {
-    font-weight: bold
-}
-
-
-* { box-sizing: border-box; }
-
-body { font-family: sans-serif; }
 
 .item {
   position: relative;
@@ -66,11 +46,26 @@ body { font-family: sans-serif; }
 
 textarea {
   height: 25px;
-  width: 25px;
+  width: 35px;
   resize: both;
+  float:left;
+  border: darkgray dashed 1px;
 }
 
+.navbar {
+  background-color: powderblue;
+  border-color: powderblue;
+}
 
+.styleButton {
+  background-color: lightsteelblue;
+  border-color: cornflowerblue;
+  color: midnightblue;
+}
+
+li {
+  color: midnightblue;
+}
 /*.textArea {
   width: 50px;
   height: 25px;

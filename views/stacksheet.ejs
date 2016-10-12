@@ -12,7 +12,6 @@
 
 
   </head>
-
   <body ng-controller="textController as txtCtrl" >
     <nav class="navbar navbar-default">
         <ul class="nav navbar-nav">
@@ -21,7 +20,7 @@
         </ul>
     </nav>
     <nav class="navbar navbar-default addRemove">
-      <ul class="nav navbar-nav">
+      <ul class="buttonMenu">
         <button class="btn btn-lg btn-default styleButton" ng-click="txtCtrl.addTextArea()">Add Element</button>
         <button class="btn btn-lg btn-default styleButton" ng-click="txtCtrl.removeTextArea()">Remove Element</button>
         <button class="btn btn-lg btn-default styleButton" ng-click="txtCtrl.getInfo()">Load</button>
@@ -36,11 +35,6 @@
           </textarea>
           <input type="hidden" ng-model="txtCtrl.textAreas[$index]._id" value="{{textArea._id}}"/>
       </div>
-
-      <!-- <div class="item">
-        <div class="handle"></div>
-        <textarea>{{ text }}</textarea>
-      </div> -->
 
     </div>
 
