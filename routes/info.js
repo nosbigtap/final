@@ -15,9 +15,14 @@ module.exports = {
       }
     });
   },
-  get: (req, res)=> {
+  get: (req, res) => {
     Element.find({}, (err, elements) => {
       res.json(elements);
     });
-  }
+  },
+  delete: (req, res) => {
+    Element.remove({}, (err, elements) =>{
+      res.json(elements);
+    });
+  },
 }

@@ -6,7 +6,7 @@ function textController($http, $document, $timeout){
     var txtCtrl = this;
     txtCtrl.textAreas = [];
 
-    //Draggibilly
+//Draggibilly
     txtCtrl.$dragify = function () {
       $('.item').draggabilly({
         handle: '.handle',
@@ -15,7 +15,7 @@ function textController($http, $document, $timeout){
       });
     }
 
-    //add element
+//add element
     txtCtrl.addTextArea = function() {
         console.info("Clicked addTextControl", txtCtrl);
         txtCtrl.textAreas.push({
@@ -29,12 +29,19 @@ function textController($http, $document, $timeout){
         $timeout(txtCtrl.$dragify, 500);
     };
 
-    // remove element
+// remove element
     txtCtrl.removeTextArea = function() {
-        console.info("Clicked removeTextArea");
+        console.info("Clicked removeTextArea", txtCtrl.lastFocus);
+        $(txtCtrl.lastFocus).parent().remove();
     };
+    $http.delete('/projects/routes/info', txtCtrl.lastFocus).then(function(res){
+      console.log(res.data);
+    });
+txtCtrl.focusTextArea = function (){
+  txtCtrl.lastFocus = document.activeElement;
+}
 
-    // save text info
+// save text info
     txtCtrl.saveInfo = function($index){
        console.log('saved stuff', $index, txtCtrl.textAreas, txtCtrl.textAreas[$index]);
 
@@ -61,7 +68,7 @@ function textController($http, $document, $timeout){
        });
     };
 
-    //load info
+//load info
     txtCtrl.getInfo = function(){
       $http.get('/projects/elements')
         .then(function success(res){
@@ -74,20 +81,3 @@ function textController($http, $document, $timeout){
         });
     };
 };
-
-
-
-
-// //Pen
-// var editor = new Pen(document.getElementById('editor'));
-//
-// // config
-//  var options = {
-//    // toolbar: document.getElementById('custom-toolbar'),
-//    editor: document.querySelector('[data-toggle="pen"]'),
-//    debug: true,
-//    list: [
-//      'insertimage', 'blockquote', 'h2', 'h3', 'p', 'code', 'insertorderedlist', 'insertunorderedlist', 'inserthorizontalrule',
-//      'indent', 'outdent', 'bold', 'italic', 'underline', 'createlink'
-//    ]
-//  };

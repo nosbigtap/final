@@ -22,7 +22,7 @@
     <nav class="navbar navbar-default addRemove">
       <ul class="buttonMenu">
         <button class="btn btn-lg btn-default styleButton" ng-click="txtCtrl.addTextArea()">Add Element</button>
-        <button class="btn btn-lg btn-default styleButton" ng-click="txtCtrl.removeTextArea()">Remove Element</button>
+        <button class="btn btn-lg btn-default styleButton" ng-click="txtCtrl.removeTextArea()" >Remove Element</button>
         <button class="btn btn-lg btn-default styleButton" ng-click="txtCtrl.getInfo()">Load</button>
       </ul>
     </nav>
@@ -30,7 +30,7 @@
     <div id="documents" class="container">
       <div class="item" ng-repeat="textArea in txtCtrl.textAreas track by $index" ng-style="textArea.parent">
         <div class="handle"></div>
-           <textarea ng-blur="txtCtrl.saveInfo($index)" ng-model="txtCtrl.textAreas[$index].text" ng-style="textArea.style">
+           <textarea ng-blur="txtCtrl.saveInfo($index)" ng-focus="txtCtrl.focusTextArea()" ng-model="txtCtrl.textAreas[$index].text" ng-style="textArea.style">
              {{ textArea.text }}
           </textarea>
           <input type="hidden" ng-model="txtCtrl.textAreas[$index]._id" value="{{textArea._id}}"/>

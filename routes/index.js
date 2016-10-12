@@ -28,4 +28,6 @@ module.exports = function(app) {
     app.post('/projects/routes/info', Info.save);
     // GET
     app.get('/projects/elements', Info.get);
+    // DELETE
+    app.delete('/projects/routes/info', Info.delete);
 }
